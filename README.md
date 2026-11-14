@@ -7,6 +7,8 @@ your book on your device. It has a story bible that checks your manuscript
 for continuity mistakes, style checks, daily goals, and print-ready PDFs
 for Amazon KDP and IngramSpark. No account, no subscription, no AI.
 
+**Try it at [novela.akadeepesh.com](https://novela.akadeepesh.com).**
+
 ![The landing page, with Story Check catching a dead character who speaks and a misspelled town](docs/screenshots/landing.webp)
 
 | Story Check | Style checks and chapter stats |
@@ -59,9 +61,9 @@ because it costs nothing to run per writer: there is no server holding books.
 - **Local-first and private** — no account and no database. Everything is
   stored in your browser (IndexedDB) on your own device, and the app is an
   installable PWA that keeps working offline once opened.
-- **Public pages** — a landing page, four guide pages for search, and
-  privacy and terms pages live in `app/(marketing)/`, with their own header
-  and footer. Competitor facts on the landing page are dated and sourced in
+- **Public pages** — a landing page, four guide pages for search, a
+  print templates page, and privacy and terms pages live in
+  `app/(marketing)/`, with their own header and footer. Competitor facts on the landing page are dated and sourced in
   `lib/marketing/comparison.ts`.
 
 ## Tech stack
@@ -140,9 +142,10 @@ Analytics is Vercel Web Analytics (`@vercel/analytics`), cookieless, on the
 public pages only and never inside the writing app. It does nothing until
 Web Analytics is turned on for the project in Vercel.
 
-The name, domain and positioning live in `lib/brand.ts`. The donation link
-(`DONATE_URL`), source link (`REPO_URL`) and privacy contact
-(`CONTACT_EMAIL`) are there too, and stay hidden while empty.
+The name, domain and positioning live in `lib/brand.ts`. The source link
+(`REPO_URL`), privacy contact (`CONTACT_EMAIL`), donation link
+(`DONATE_URL`) and template store link (`TEMPLATE_STORE_URL`) are there
+too. Any link left empty stays hidden.
 
 The app was called KoraKagaj before. Files made then (`.korakagaj` project
 files and backups, and template packs with the old format ids) still
